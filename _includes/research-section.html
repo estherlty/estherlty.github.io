@@ -1,4 +1,7 @@
 <section class="research-section" id="{{ include.id }}" data-scale-label="{{ include.scale_indicator }}">
+  {% if include.canvas_variant %}
+  <canvas class="canvas-bg" data-variant="{{ include.canvas_variant }}"></canvas>
+  {% endif %}
   <div class="container">
     <p class="research-section__scale">{{ include.scale }}</p>
     <h2 class="research-section__title">{{ include.title }}</h2>
