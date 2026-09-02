@@ -1,0 +1,85 @@
+- title: "Physics-Constrained Gaussian Process Regression for Uncertainty Quantification of Equation-of-State Models"
+  authors:
+    - name: "T. Y. Liu"
+      first_author: true
+    - name: "H. Sharma"
+    - name: "S. Ali"
+    - name: "M. D. Shields"
+  journal: null
+  volume: null
+  article_number: null
+  year: 2026
+  doi: null
+  status: "in preparation"
+
+- title: "Reduction of vanadium diffusivity within copper grain boundaries due to enhanced binding"
+  authors:
+    - name: "T. Y. Liu"
+      first_author: true
+      co_first: true
+    - name: "E. Sheu"
+      first_author: true
+      co_first: true
+    - name: "D. J. Williams"
+    - name: "J. K. Baldwin"
+    - name: "M. J. Demkowicz"
+  journal: "Scripta Materialia"
+  volume: 258
+  article_number: "116515"
+  year: 2025
+  doi: "10.1016/j.scriptamat.2024.116515"
+  status: "published"
+
+- title: "Temperature-dependence of vacancy/self-interstitial recombination volumes in copper"
+  authors:
+    - name: "J. C. Mwungeli"
+    - name: "T. Y. Liu"
+    - name: "M. J. Demkowicz"
+  journal: "Physical Review Materials"
+  volume: 9
+  article_number: "023601"
+  year: 2025
+  doi: "10.1103/PhysRevMaterials.9.023601"
+  status: "published"
+
+- title: "Permeation of niobium through grain boundaries in copper"
+  authors:
+    - name: "E. Sheu"
+      first_author: true
+      co_first: true
+    - name: "T. Y. Liu"
+      first_author: true
+      co_first: true
+    - name: "D. J. Williams"
+    - name: "J. K. Baldwin"
+    - name: "M. J. Demkowicz"
+  journal: "Acta Materialia"
+  volume: 274
+  article_number: "120002"
+  year: 2024
+  doi: "10.1016/j.actamat.2024.120002"
+  status: "published"
+
+- title: "Effect of grain boundaries and rigid inclusions on plasticity in nickel bicrystals containing helium bubbles and radiation-induced self-interstitial atom clusters"
+  authors:
+    - name: "T. Y. Liu"
+      first_author: true
+    - name: "M. J. Demkowicz"
+  journal: "Journal of Nuclear Materials"
+  volume: 594
+  article_number: "155030"
+  year: 2024
+  doi: "10.1016/j.jnucmat.2024.155030"
+  status: "published"
+
+- title: "Effect of free surfaces on localized plastic deformation in single-crystal nickel containing helium bubbles and radiation-induced self-interstitial atom clusters"
+  authors:
+    - name: "T. Y. Liu"
+      first_author: true
+    - name: "M. J. Demkowicz"
+  journal: "Journal of Nuclear Materials"
+  volume: 587
+  article_number: "154741"
+  year: 2023
+  doi: "10.1016/j.jnucmat.2023.154741"
+  status: "published"

@@ -417,3 +417,76 @@ a {
   padding: var(--space-sm) var(--space-lg);
   cursor: pointer;
 }
+
+/* ---------------------------------------------------------------
+   Archive pages (publications, talks)
+   --------------------------------------------------------------- */
+
+.page {
+  padding-block: var(--space-xl);
+}
+
+.page__title {
+  font-size: var(--text-2xl);
+  margin: 0 0 var(--space-lg);
+  padding-inline: var(--space-lg);
+}
+
+.pub-list,
+.talks-list {
+  list-style: none;
+  margin: 0 0 var(--space-lg);
+  padding: 0 var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.pub-list__item,
+.talks-list__item {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-lg);
+}
+
+.pub-list__title,
+.talks-list__title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin: 0 0 var(--space-xs);
+  max-width: 68ch;
+}
+
+.pub-list__authors,
+.talks-list__meta {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-xs);
+}
+
+.pub-list__venue {
+  margin: 0 0 var(--space-xs);
+}
+
+.pub-list__doi {
+  font-size: var(--text-sm);
+}
+
+.pub-list__legend {
+  padding-inline: var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.talks-list__year {
+  font-size: var(--text-lg);
+  padding-inline: var(--space-lg);
+  margin: var(--space-xl) 0 var(--space-md);
+}
+
+.talks-list__badge {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  padding: 0 var(--space-sm);
+}
