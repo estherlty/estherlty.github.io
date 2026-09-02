@@ -490,3 +490,75 @@ a {
   border-radius: var(--radius-pill);
   padding: 0 var(--space-sm);
 }
+
+/* ---------------------------------------------------------------
+   Progressive enhancement: JS-only controls
+   Hidden by default; the inline no-FOUC script in <head> adds
+   .js to <html> synchronously, before first paint, if JS runs.
+   Nothing here is load-bearing content — see spec hard requirements.
+   --------------------------------------------------------------- */
+
+.theme-toggle,
+.research-section__toggle,
+.scale-indicator {
+  display: none;
+}
+
+.js .theme-toggle,
+.js .research-section__toggle,
+.js .scale-indicator {
+  display: inline-flex;
+}
+
+.theme-toggle {
+  align-items: center;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  padding: var(--space-xs) var(--space-md);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.research-section__toggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  padding: var(--space-xs) var(--space-md);
+  margin-bottom: var(--space-lg);
+  cursor: pointer;
+}
+
+.research-section__toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.js .scale-indicator {
+  position: fixed;
+  top: 50%;
+  right: var(--space-md);
+  transform: translateY(-50%);
+  z-index: 10;
+  writing-mode: vertical-rl;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .js .scale-indicator {
+    display: none;
+  }
+}

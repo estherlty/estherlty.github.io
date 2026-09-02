@@ -1,4 +1,4 @@
-<section class="research-section" id="{{ include.id }}">
+<section class="research-section" id="{{ include.id }}" data-scale-label="{{ include.scale_indicator }}">
   <div class="container">
     <p class="research-section__scale">{{ include.scale }}</p>
     <h2 class="research-section__title">{{ include.title }}</h2>
@@ -8,6 +8,8 @@
       <img src="{{ include.image | relative_url }}" alt="{{ include.image_alt }}">
     </figure>
     {% endif %}
+
+    <button type="button" class="research-section__toggle" aria-pressed="false">Plain-language version</button>
 
     <div class="research-section__register research-section__register--technical">
       {{ include.technical }}
