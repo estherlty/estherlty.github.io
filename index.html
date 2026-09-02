@@ -54,3 +54,104 @@ title: Home
     </div>
   </div>
 </section>
+
+<section class="origins" id="origins">
+  <div class="container">
+    <p class="research-section__scale">Scale ~10²⁰ m — Origins</p>
+    <h2 class="research-section__title">From black holes to grain boundaries</h2>
+    <div class="origins__body">
+      <p>Esther started out studying the universe at its largest. As an undergraduate physicist at UT Austin, her honors thesis estimated merger rates for GW150914-like binary black holes — the kind of cataclysm LIGO had just confirmed it could hear, two black holes spiraling together and briefly outshining, in gravitational waves alone, every star in the observable universe combined.</p>
+      <p>It was thrilling physics, and it was also almost entirely inferential: rates built from population models and astrophysical arguments, several steps removed from anything she could touch or watch happen. What pulled her toward materials science was the opposite instinct — she wanted to watch the mechanism itself, atom by atom, and see a failure or a transport pathway unfold in real time rather than infer it from a rate.</p>
+      <p>That's the thread running under everything since: a physicist's appetite for the mechanism underneath the behavior, whether the behavior in question spans a merging galaxy or a grain boundary a few atoms wide.</p>
+    </div>
+  </div>
+</section>
+
+{% capture interfaces_technical %}
+<p>Composites that pair refractory metals with copper are attractive for thermally stable, layered engineering materials — copper acts as a diffusion barrier between the low-solubility outer layers. Esther's work asks whether that barrier actually holds at the grain-boundary level, where lattice diffusion isn't the only pathway available.</p>
+<p>Using diffusion-couple experiments (with collaborators D. J. Williams and J. K. Baldwin at Los Alamos) alongside atomistic modeling, the work shows that niobium permeates polycrystalline copper via short-circuit transport along a subset of grain boundaries, despite negligible bulk solubility — atomistic simulations trace this to a negative enthalpy of mixing at those boundaries, which stabilizes a mobile Nb solution there. Molybdenum, run as a comparison in Nb/Cu/Mo and V/Cu/Mo trilayers, shows the opposite sign of mixing enthalpy at Cu boundaries and does not permeate at all.</p>
+<p>Vanadium permeates too, but more slowly than niobium, and the reason turns out to be subtler than solubility mismatch: MD simulations attribute the reduced diffusivity to stronger V binding to the boundary itself — a higher equilibrium boundary concentration and a higher activation energy for boundary diffusion, rather than a lower solubility to begin with.</p>
+{% endcapture %}
+{% capture interfaces_plain %}
+<p>Imagine building a sandwich out of metals that don't normally like to mix — a hard outer metal, a copper layer, another hard outer metal — to make a composite that stays stable at high temperature. The copper layer is supposed to keep the two sides from interdiffusing into each other.</p>
+<p>It turns out copper isn't a perfect wall. Niobium finds shortcuts through the tiny boundaries between copper's individual crystal grains — like traffic cutting through side streets instead of staying on the main road — even though niobium and copper barely mix in bulk. Molybdenum doesn't take those shortcuts at all; it stays put.</p>
+<p>Vanadium takes the shortcuts too, but more slowly, because it sticks more tightly to the boundary "walls" along the way. Understanding which metals sneak through and why matters for designing layered materials — for nuclear or aerospace hardware — that need to resist mixing under heat over long service lifetimes.</p>
+{% endcapture %}
+{% include research-section.html
+   id="interfaces"
+   scale="Scale ~10⁻⁶ m — Interfaces & transport"
+   title="Grain boundaries as shortcuts"
+   image="/assets/img/3_niobium-permeation-copper-grain-boundaries.png"
+   image_alt="Illustration of niobium atoms permeating along a grain boundary network in copper"
+   technical=interfaces_technical
+   plain=interfaces_plain %}
+
+{% capture damage_technical %}
+<p>Ex-service Inconel X-750 reactor spacers embrittle after decades of neutron irradiation, accumulating helium bubbles and radiation-induced self-interstitial atom (SIA) clusters that decorate grain boundaries and matrix/inclusion interfaces. Esther's PhD work used large-scale molecular dynamics to reproduce that damage state in single-crystal and bicrystal nickel and watch how it deforms under load.</p>
+<p>In single crystals, the presence of a free surface changes the deformation mode entirely: models with free surfaces nucleate a dislocation slip band, while otherwise-identical bulk models instead form nanotwins. He bubbles that happen to overlap a slip band or nanotwin deform far more severely than bubbles elsewhere in the model — but even at deviatoric strains near 10%, they don't coalesce or link up into anything resembling an incipient crack.</p>
+<p>Bicrystals behave differently again: grain boundaries block dislocations and suppress the localized slip bands and nanotwins seen in single crystals, favoring more uniform plasticity along a persistent slip plane instead. No cracks initiate directly at the boundary, but He bubbles at matrix/inclusion interfaces elongate and migrate toward regions of high tension — a plausible precursor to crack-like flaws via bubble coalescence, and a mechanism this work helped identify. A companion study with J. C. Mwungeli extended the underlying defect physics, calculating how vacancy/SIA recombination volumes in copper depend on temperature — finding they drop from roughly 290Ω at 300 K to about 160Ω at 500 K and above, input that feeds directly into multiscale radiation-response models.</p>
+{% endcapture %}
+{% capture damage_plain %}
+<p>Metal parts inside a nuclear reactor spend years absorbing radiation, which knocks atoms out of place and creates tiny bubbles of helium gas trapped inside the metal. Esther runs simulations that zoom in far enough to watch individual atoms move, to see how these bubbles change the way the metal bends and eventually cracks.</p>
+<p>One surprise: it matters whether the damaged region is near the surface of the metal or buried deep inside a solid block. Near a surface, deformation organizes into a clean slip band; buried inside, the same defects instead produce delicate twin bands. And where two crystal grains meet at a boundary, everything stays more rigid — deformation spreads out smoothly instead of localizing the way it does inside a single uninterrupted crystal.</p>
+<p>Even so, the helium bubbles nearest those grain boundaries stretch out and drift toward the highest-stress spots nearby — a first clue for how a real reactor component might eventually crack, years into service.</p>
+{% endcapture %}
+{% include research-section.html
+   id="damage"
+   scale="Scale ~10⁻¹⁰ m — Damage & defects"
+   title="Helium bubbles and the road to a crack"
+   image="/assets/img/2_helium-bubble-crack-initiation-concept.png"
+   image_alt="Illustration of helium bubbles and slip bands within a nickel crystal lattice"
+   technical=damage_technical
+   plain=damage_plain
+   note="Coming soon." %}
+
+{% capture uncertainty_technical %}
+<p>Equation-of-state (EOS) models are essential for hydrodynamic simulations in extreme environments, yet quantifying their predictive uncertainty remains challenging. This project develops a physics-constrained Gaussian process regression (GPR) framework for EOS construction that's deployable in conventional hydrocodes — embedding thermodynamic constraints into a GPR with flexible backbone functions and tunable noise-modeling parameters, so the model captures physical trends while also reporting model-form uncertainty and data noise separately.</p>
+<p>The method is demonstrated by generating EOS tables from GPR realizations trained on an aluminum quantum molecular dynamics (QMD) dataset, then integrating those tables into the HYADES hydrocode. Shock simulations of pure aluminum reproduce Hugoniot states consistent with experimental data and standard LANL SESAME tables, while additionally providing a statistical uncertainty quantification the standard tables don't offer.</p>
+<p>The broader aim is decision analytics: knowing not just a predicted Hugoniot state but how much to trust it, in a form extensible to multi-fidelity materials modeling generally.</p>
+{% endcapture %}
+{% capture uncertainty_plain %}
+<p>When a material gets hit by a shockwave — from an explosion, or a high-speed impact — predicting how it responds requires an "equation of state," essentially a lookup table connecting pressure, density, and temperature. Esther's current project builds those tables with a statistical method (Gaussian process regression) that doesn't just predict a single number — it also reports how confident to be in that number, and flags where the model is on shakier ground due to sparse data.</p>
+<p>She tested the approach on aluminum and plugged the results into a real shock-physics simulation code. The predictions matched decades of experimental data, but now arrive with honest uncertainty bars attached — useful for anyone deciding how to design a high-pressure experiment, or how much to trust a simulation built on top of one.</p>
+{% endcapture %}
+{% include research-section.html
+   id="uncertainty"
+   scale="Across all scales — Uncertainty"
+   title="An equation of state that knows what it doesn't know"
+   image="/assets/img/6_EOS_UQ.png"
+   image_alt="Pressure-temperature surface plot with an uncertainty band"
+   technical=uncertainty_technical
+   plain=uncertainty_plain %}
+
+<section class="hobbies" id="hobbies">
+  <div class="container">
+    <h2 class="hobbies__title">Outside the lab</h2>
+    <p class="hobbies__body">Making pour-overs, playing piano, and watching spacecraft launches.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="contact__title">Get in touch</h2>
+    <div class="contact__grid">
+      <ul class="contact__links">
+        <li><a href="{{ "/assets/cv/CV.pdf" | relative_url }}">Download CV</a></li>
+        <li><a href="https://www.linkedin.com/in/tungyan-liu/">LinkedIn</a></li>
+        <li><a href="https://scholar.google.com/citations?user=21o6TwIAAAAJ&amp;hl=en">Google Scholar</a></li>
+      </ul>
+      <form class="contact__form" action="#" method="POST">
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" required>
+
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" name="_replyto" required>
+
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>

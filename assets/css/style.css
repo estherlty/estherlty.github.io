@@ -279,3 +279,141 @@ a {
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
+
+/* ---------------------------------------------------------------
+   Research sections (origins, interfaces, damage, uncertainty)
+   --------------------------------------------------------------- */
+
+.origins,
+.research-section,
+.hobbies,
+.contact {
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.research-section__scale {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-xs);
+}
+
+.research-section__title,
+.origins .research-section__title {
+  font-size: var(--text-xl);
+  margin: 0 0 var(--space-lg);
+  max-width: 30ch;
+}
+
+.research-section__visual {
+  margin: 0 0 var(--space-lg);
+}
+
+.research-section__visual img {
+  border-radius: var(--radius-sm);
+  width: 100%;
+  height: auto;
+}
+
+.research-section__register p,
+.origins__body p {
+  max-width: 68ch;
+  color: var(--color-text);
+  margin: 0 0 var(--space-md);
+}
+
+.research-section__note {
+  margin-top: var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.research-section__note summary {
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.research-section__note p {
+  max-width: 68ch;
+  margin: var(--space-sm) 0 0;
+}
+
+/* ---------------------------------------------------------------
+   Hobbies — deliberately plain, breaks the research-section pattern
+   --------------------------------------------------------------- */
+
+.hobbies__title {
+  font-size: var(--text-xl);
+  margin: 0 0 var(--space-md);
+}
+
+.hobbies__body {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   Contact
+   --------------------------------------------------------------- */
+
+.contact {
+  border-bottom: none;
+}
+
+.contact__title {
+  font-size: var(--text-xl);
+  margin: 0 0 var(--space-lg);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-xl);
+}
+
+.contact__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  max-width: 32rem;
+}
+
+.contact__form label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+}
+
+.contact__form input,
+.contact__form textarea {
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+}
+
+.contact__form button {
+  align-self: flex-start;
+  margin-top: var(--space-md);
+  font: inherit;
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--space-sm) var(--space-lg);
+  cursor: pointer;
+}

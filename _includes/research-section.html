@@ -1,0 +1,26 @@
+<section class="research-section" id="{{ include.id }}">
+  <div class="container">
+    <p class="research-section__scale">{{ include.scale }}</p>
+    <h2 class="research-section__title">{{ include.title }}</h2>
+
+    {% if include.image %}
+    <figure class="research-section__visual">
+      <img src="{{ include.image | relative_url }}" alt="{{ include.image_alt }}">
+    </figure>
+    {% endif %}
+
+    <div class="research-section__register research-section__register--technical">
+      {{ include.technical }}
+    </div>
+    <div class="research-section__register research-section__register--plain" hidden>
+      {{ include.plain }}
+    </div>
+
+    {% if include.note %}
+    <details class="research-section__note">
+      <summary>What didn't work</summary>
+      <p>{{ include.note }}</p>
+    </details>
+    {% endif %}
+  </div>
+</section>
