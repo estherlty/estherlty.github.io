@@ -1,0 +1,138 @@
+/* ---------------------------------------------------------------
+   Theming foundations
+   Everything is a custom property. No hardcoded color, font size,
+   or spacing value should appear anywhere below this block.
+   Dark is the default (unmarked) palette; light is the alternate,
+   applied via prefers-color-scheme and overridable with
+   [data-theme] on <html>. Palette values are placeholders until
+   real OVITO renders exist to inform them.
+   --------------------------------------------------------------- */
+
+:root {
+  /* Color — dark (default) */
+  --color-bg: #0b0e11;
+  --color-surface: #14181d;
+  --color-text: #e8eaed;
+  --color-text-muted: #9aa1ab;
+  --color-border: #2a2f36;
+  --color-accent: #e0a458;
+
+  /* Type scale */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --color-bg: #f7f6f3;
+    --color-surface: #ffffff;
+    --color-text: #1a1d21;
+    --color-text-muted: #5b6169;
+    --color-border: #dfe2e6;
+    --color-accent: #b3701f;
+  }
+}
+
+:root[data-theme="light"] {
+  --color-bg: #f7f6f3;
+  --color-surface: #ffffff;
+  --color-text: #1a1d21;
+  --color-text-muted: #5b6169;
+  --color-border: #dfe2e6;
+  --color-accent: #b3701f;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0b0e11;
+  --color-surface: #14181d;
+  --color-text: #e8eaed;
+  --color-text-muted: #9aa1ab;
+  --color-border: #2a2f36;
+  --color-accent: #e0a458;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Reset
+   --------------------------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+/* ---------------------------------------------------------------
+   Shell: nav + footer
+   --------------------------------------------------------------- */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav__brand {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-nav__links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.site-nav__links a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+}
+
+.site-nav__links a:hover {
+  color: var(--color-text);
+}
+
+.site-footer {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
