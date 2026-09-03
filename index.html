@@ -1,1 +1,147 @@
-Esther Liu's website.
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <canvas class="canvas-bg" data-variant="lattice"></canvas>
+  <div class="container hero__content">
+    <div class="hero__text">
+      <h1 class="hero__name">Tung Yan &quot;Esther&quot; Liu</h1>
+      <p class="hero__line">From atoms to applications, I build the models in between.</p>
+      <p class="hero__subline">Computational materials scientist working on materials defects, shock response, and physics-informed machine learning.</p>
+      <p class="hero__scroll-cue">Scroll ↓</p>
+    </div>
+    <div class="hero__portrait">
+      <img class="hero__headshot hero__headshot--quench" src="{{ "/assets/img/headshot_quench.png" | relative_url }}" alt="Portrait of Tung Yan &quot;Esther&quot; Liu">
+      <img class="hero__headshot hero__headshot--anneal" src="{{ "/assets/img/headshot_anneal.png" | relative_url }}" alt="Portrait of Tung Yan &quot;Esther&quot; Liu">
+    </div>
+  </div>
+</section>
+
+<section class="at-a-glance" id="at-a-glance">
+  <div class="container">
+    <h2 class="visually-hidden">At a glance</h2>
+    <div class="at-a-glance__grid">
+      <div class="at-a-glance__item">
+        <p class="at-a-glance__label">Current role</p>
+        <p>Postdoctoral Fellow, Hopkins Extreme Materials Institute, Johns Hopkins University</p>
+      </div>
+
+      <div class="at-a-glance__item at-a-glance__methods">
+        <p class="at-a-glance__label">Methods &amp; tools</p>
+        <ul>
+          <li>Molecular dynamics (LAMMPS)</li>
+          <li>DFT (VASP)</li>
+          <li>Gaussian process regression &amp; UQ</li>
+          <li>Python (NumPy, SciPy, scikit-learn)</li>
+          <li>MATLAB</li>
+          <li>HPC &amp; SLURM</li>
+          <li>OVITO</li>
+          <li>HYADES</li>
+        </ul>
+      </div>
+      
+      <!--
+      <div class="at-a-glance__item">
+        <p class="at-a-glance__label">Outcome</p>
+        <p class="at-a-glance__number">70×</p>
+        <p>Reduced computational cost by optimizing simulation workflows in LAMMPS and parallel computing on HPC platforms</p>
+      </div>
+      -->
+
+      <div class="at-a-glance__item">
+        <p class="at-a-glance__label">Cross-functional</p>
+        <p>Collaborates with experimentalists, integrating SEM/TEM/EBSD/EDX data into modeling workflows</p>
+      </div>
+
+      <div class="at-a-glance__links">
+        <a href="{{ "/assets/cv/CV.pdf" | relative_url }}">Download CV</a>
+        <a href="mailto:esther.liu@utexas.edu">Contact</a>
+        <a href="https://www.linkedin.com/in/tungyan-liu/">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=21o6TwIAAAAJ&amp;hl=en">Google Scholar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="origins" id="origins" data-scale-label="~10²⁰ m">
+  <div class="container">
+    <p class="research-section__scale">Scale ~10²⁰ m — Origins</p>
+    <h2 class="research-section__title">From black holes to atoms</h2>
+    <div class="origins__body">
+      <p>I started out studying the universe at its largest. As an undergraduate at UT Austin, my senior thesis compared estimated merger rates and their underlying models for GW150914-like binary black holes mergers. It is the kind of violent events LIGO had just confirmed it could hear, two black holes spiraling together and briefly outshining, in gravitational waves alone, every star in the observable universe.</p>
+      <p>It was thrilling physics, and it was also mostly inferential at the time: rates built from population models and astrophysical arguments, several steps removed from anything I could touch or build upon. What pulled me toward materials science was the same curiosity but in a different scale. I wanted to examine the mechanism itself closely, and build something that advance our day-to-day technology.</p>
+      <p>That's the thread running under everything since: a physicist's appetite for the mechanism underneath the behavior, whether the behavior in question spans a merging galaxy or a grain boundary a few atoms wide.</p>
+    </div>
+  </div>
+</section>
+
+{% capture interfaces_technical %}
+<p>Composites that pair refractory metals with copper are attractive for thermally stable, layered engineering materials: copper acts as a diffusion barrier between the low-solubility outer layers. My work asks whether that barrier actually holds at the grain-boundary level, where lattice diffusion isn't the only pathway available.</p>
+<p>Using diffusion-couple experiments (with collaborators D. J. Williams and J. K. Baldwin at Los Alamos) alongside atomistic modeling, the work shows that niobium permeates polycrystalline copper via short-circuit transport along a subset of grain boundaries, despite negligible bulk solubility. Atomistic simulations trace this to a negative enthalpy of mixing at those boundaries, which stabilizes a mobile Nb solution there. Molybdenum, run as a comparison in Nb/Cu/Mo and V/Cu/Mo trilayers, shows the opposite sign of mixing enthalpy at Cu boundaries and does not permeate at all.</p>
+<p>Vanadium permeates too, but more slowly than niobium, and the reason turns out to be subtler than solubility mismatch: MD simulations suggest that the reduced diffusivity attribute to stronger V binding to the boundary itself.</p>
+{% endcapture %}
+{% capture interfaces_plain %}
+<p>Imagine building a sandwich out of metals that don't normally like to mix: a hard outer metal, a copper layer, another hard outer metal — to make a composite that stays stable at high temperature. The copper layer is supposed to keep the two sides from interdiffusing into each other.</p>
+<p>It turns out copper isn't a perfect wall. Niobium finds shortcuts through the tiny boundaries between copper's individual crystal grains, like traffic cutting through side streets instead of staying on the main road, even though niobium and copper barely mix in bulk. Molybdenum doesn't take those shortcuts at all; it stays put.</p>
+<p>Vanadium takes the shortcuts too, but more slowly, because it sticks more tightly to the boundary "walls" along the way. Understanding which metals sneak through and why matters for designing layered materials, whether for nuclear or aerospace hardware, that need to resist mixing under heat over long service lifetimes.</p>
+{% endcapture %}
+{% include research-section.html
+   id="interfaces"
+   scale="Scale ~10⁻⁶ m — Interfaces & transport"
+   scale_indicator="~10⁻⁶ m"
+   canvas_variant="voronoi"
+   title="Grain boundaries as shortcuts"
+   image="/assets/img/3_niobium-permeation-copper-grain-boundaries.png"
+   image_alt="Illustration of niobium atoms permeating along a grain boundary network in copper"
+   technical=interfaces_technical
+   plain=interfaces_plain %}
+
+{% capture damage_technical %}
+<p>Ex-service Inconel X-750 reactor spacers embrittle after decades of neutron irradiation, accumulating helium bubbles and radiation-induced self-interstitial atom (SIA) clusters that decorate grain boundaries and matrix/inclusion interfaces. My PhD work used large-scale molecular dynamics to reproduce that damage state in single-crystal and bicrystal nickel and watch how it deforms under load.</p>
+<p>In single crystals, the presence of a free surface changes the deformation mode entirely: models with free surfaces nucleate a dislocation slip band, while otherwise-identical bulk models instead form nanotwins. He bubbles that happen to overlap a slip band or nanotwin deform far more severely than bubbles elsewhere in the model. But even at deviatoric strains near 10%, they don't coalesce or link up into anything resembling an incipient crack.</p>
+<p>Bicrystals behave differently again: grain boundaries block dislocations and suppress the localized slip bands and nanotwins seen in single crystals, favoring more uniform plasticity along a persistent slip plane instead. No cracks initiate directly at the boundary, but He bubbles at matrix/inclusion interfaces elongate and migrate toward regions of high tension. It is a plausible precursor to crack-like flaws via bubble coalescence, and a mechanism this work helped identify.</p>
+{% endcapture %}
+{% capture damage_plain %}
+<p>Metal parts inside a nuclear reactor spend years absorbing radiation, which knocks atoms out of place and creates tiny bubbles of helium gas trapped inside the metal. I run simulations that zoom in far enough to watch individual atoms move, to see how these bubbles change the way the metal bends and eventually cracks.</p>
+<p>One surprise: it matters whether the damaged region is near the surface of the metal or buried deep inside a solid block. Near a surface, deformation organizes into a clean slip band; buried inside, the same defects instead produce delicate twin bands. And where two crystal grains meet at a boundary, everything stays more rigid — deformation spreads out smoothly instead of localizing the way it does inside a single uninterrupted crystal.</p>
+<p>Even so, the helium bubbles nearest those grain boundaries stretch out and drift toward the highest-stress spots nearby. This may suggest a clue for how a real reactor component might eventually crack, years into service.</p>
+{% endcapture %}
+{% include research-section.html
+   id="damage"
+   scale="Scale ~10⁻¹⁰ m — Damage & defects"
+   scale_indicator="~10⁻¹⁰ m"
+   canvas_variant="lattice"
+   title="Helium bubbles and the road to a crack"
+   image="/assets/img/2_helium-bubble-crack-initiation-concept.png"
+   image_alt="Illustration of helium bubbles and slip bands within a nickel crystal lattice"
+   technical=damage_technical
+   plain=damage_plain
+   note="Coming soon." %}
+
+{% capture uncertainty_technical %}
+<p>Equation-of-state (EOS) models are essential for hydrodynamic simulations in extreme environments, yet quantifying their predictive uncertainty remains challenging. This project develops a physics-constrained Gaussian process regression (GPR) framework for EOS construction that's deployable in conventional hydrocodes — embedding thermodynamic constraints into a GPR with flexible backbone functions and tunable noise-modeling parameters, so the model captures physical trends while also reporting model-form uncertainty and data noise separately.</p>
+<p>The method is demonstrated by generating EOS tables from GPR realizations trained on an aluminum quantum molecular dynamics (QMD) dataset, then integrating those tables into the HYADES hydrocode. Shock simulations of pure aluminum reproduce Hugoniot states consistent with experimental data and standard LANL SESAME tables, while additionally providing a statistical uncertainty quantification the standard tables don't offer.</p>
+<p>The broader aim is decision analytics: knowing not just a predicted Hugoniot state but how much to trust it, in a form extensible to multi-fidelity materials modeling generally.</p>
+{% endcapture %}
+{% capture uncertainty_plain %}
+<p>When a material gets hit by a shockwave (from an explosion, or a high-speed impact), predicting how it responds requires an "equation of state," essentially a lookup table connecting pressure, density, and temperature. My current project builds those tables with a statistical method (Gaussian process regression) that doesn't just predict a single number. It also reports how confident to be in that number, and flags where the model is on shakier ground due to sparse data.</p>
+<p>I tested the approach on aluminum and plugged the results into a real shock-physics simulation code. The predictions matched experimental data, and arrive with estimated uncertainty bars attached. It is useful for anyone deciding how to design a high-pressure experiment, or how much to trust a simulation built on top of one.</p>
+{% endcapture %}
+{% include research-section.html
+   id="uncertainty"
+   scale="Across all scales — Uncertainty"
+   scale_indicator="All scales"
+   canvas_variant="contours"
+   title="An equation of state that knows what it doesn't know"
+   image="/assets/img/6_EOS_UQ.png"
+   image_alt="Pressure-temperature surface plot with an uncertainty band"
+   technical=uncertainty_technical
+   plain=uncertainty_plain %}
+
+<section class="hobbies" id="hobbies">
+  <div class="container">
+    <h2 class="hobbies__title">Outside the lab</h2>
+    <p class="hobbies__body">Making pour-overs, playing piano, and watching spacecraft launches.</p>
+  </div>
+</section>

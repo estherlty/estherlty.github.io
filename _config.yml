@@ -1,0 +1,23 @@
+title: "Tung Yan \"Esther\" Liu"
+description: >-
+  Computational materials scientist working on large-scale atomistic simulations,
+  physics-informed machine learning, and uncertainty quantification.
+url: "https://estherlty.github.io"
+baseurl: ""
+
+author: Tung Yan "Esther" Liu
+
+theme: null
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
