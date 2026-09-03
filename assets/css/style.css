@@ -69,6 +69,44 @@
   --color-accent: #e0a458;
 }
 
+/* Headshot swap follows the same cascade as the color tokens above:
+   quench (dark) is the default, anneal (light) takes over via
+   prefers-color-scheme, and [data-theme] always wins last. Pure CSS —
+   works with JavaScript disabled, unlike the theme *toggle* itself. */
+.hero__headshot--quench {
+  display: block;
+}
+
+.hero__headshot--anneal {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .hero__headshot--quench {
+    display: none;
+  }
+
+  :root:not([data-theme="dark"]) .hero__headshot--anneal {
+    display: block;
+  }
+}
+
+:root[data-theme="light"] .hero__headshot--quench {
+  display: none;
+}
+
+:root[data-theme="light"] .hero__headshot--anneal {
+  display: block;
+}
+
+:root[data-theme="dark"] .hero__headshot--quench {
+  display: block;
+}
+
+:root[data-theme="dark"] .hero__headshot--anneal {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
@@ -84,6 +122,10 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -121,10 +163,12 @@ a {
   font-weight: 600;
   text-decoration: none;
   color: var(--color-text);
+  white-space: nowrap;
 }
 
 .site-nav__links {
   display: flex;
+  align-items: center;
   gap: var(--space-md);
 }
 
@@ -137,11 +181,59 @@ a {
   color: var(--color-text);
 }
 
+@media (max-width: 480px) {
+  .site-nav {
+    flex-wrap: wrap;
+    row-gap: var(--space-sm);
+    padding-inline: var(--space-md);
+  }
+
+  .site-nav__links {
+    width: 100%;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+  }
+}
+
 .site-footer {
   padding: var(--space-lg);
   border-top: 1px solid var(--color-border);
   color: var(--color-text-muted);
   font-size: var(--text-sm);
+}
+
+.back-to-top {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--text-lg);
+  line-height: 1;
+}
+
+.back-to-top:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+@media (max-width: 480px) {
+  .back-to-top {
+    right: var(--space-md);
+    bottom: var(--space-md);
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: var(--text-base);
+  }
 }
 
 /* ---------------------------------------------------------------
@@ -195,6 +287,31 @@ a {
   padding-block: var(--space-xl) var(--space-lg);
 }
 
+.hero__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.hero__text {
+  flex: 1 1 320px;
+}
+
+.hero__portrait {
+  flex: 0 0 auto;
+}
+
+.hero__headshot {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
 @media (max-width: 480px) {
   :root {
     --text-2xl: 1.875rem;
@@ -202,6 +319,15 @@ a {
 
   .hero {
     padding-block: var(--space-lg) var(--space-md);
+  }
+
+  .hero__content {
+    gap: var(--space-lg);
+  }
+
+  .hero__headshot {
+    width: 96px;
+    height: 96px;
   }
 }
 
@@ -307,8 +433,7 @@ a {
 
 .origins,
 .research-section,
-.hobbies,
-.contact {
+.hobbies {
   padding-block: var(--space-xl);
   border-bottom: 1px solid var(--color-border);
 }
@@ -329,6 +454,7 @@ a {
 }
 
 .research-section__visual {
+  max-width: 68ch;
   margin: 0 0 var(--space-lg);
 }
 
@@ -376,67 +502,8 @@ a {
   margin: 0;
 }
 
-/* ---------------------------------------------------------------
-   Contact
-   --------------------------------------------------------------- */
-
-.contact {
+.hobbies {
   border-bottom: none;
-}
-
-.contact__title {
-  font-size: var(--text-xl);
-  margin: 0 0 var(--space-lg);
-}
-
-.contact__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-xl);
-}
-
-.contact__links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.contact__form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  max-width: 32rem;
-}
-
-.contact__form label {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-top: var(--space-sm);
-}
-
-.contact__form input,
-.contact__form textarea {
-  font: inherit;
-  color: var(--color-text);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: var(--space-sm);
-}
-
-.contact__form button {
-  align-self: flex-start;
-  margin-top: var(--space-md);
-  font: inherit;
-  color: var(--color-bg);
-  background: var(--color-accent);
-  border: none;
-  border-radius: var(--radius-pill);
-  padding: var(--space-sm) var(--space-lg);
-  cursor: pointer;
 }
 
 /* ---------------------------------------------------------------
