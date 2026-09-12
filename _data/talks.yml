@@ -1,0 +1,87 @@
+- title: "Uncertainty-Aware, Physics-Constrained Gaussian Process Regression for Equation-of-State Modeling"
+  type: talk
+  event: "MS&T26: Materials Science & Technology"
+  location: "Pittsburgh, PA"
+  year: 2026
+  date_display: "October 4–7, 2026"
+  invited: false
+
+- title: "Physics-constrained Gaussian Process Regression Equation-of-State Model for Shock Simulations"
+  type: talk
+  event: "American Physical Society SCCM 2025"
+  location: "Washington, DC"
+  year: 2025
+  date_display: "June 22–27, 2025"
+  invited: true
+
+- title: "Physics-Constrained Gaussian Process Regression Equation-of-State Model for Shock Simulations"
+  type: poster
+  event: "Artificial Intelligence for Materials Science (AIMS) Workshop, NIST"
+  location: "Gaithersburg, MD"
+  year: 2025
+  date_display: "July 9–10, 2025"
+  invited: false
+
+- title: "Why this way? An atomistic study on diffusion pathway in nanocomposite of immiscible metals"
+  type: talk
+  event: "The 6th High Performance Research Computing (HPRC) Symposium"
+  location: "College Station, TX"
+  year: 2023
+  date_display: "May 18–19, 2023"
+  invited: false
+
+- title: "Atomistic simulation of plastic deformation in nickel bi-crystals containing helium bubbles"
+  type: talk
+  event: "The Society of Engineering Science (SES) 2022 Annual Meetings"
+  location: "College Station, TX"
+  year: 2022
+  date_display: "October 15–17, 2022"
+  invited: false
+
+- title: "Molecular dynamics simulation of deformation in nickel containing helium bubbles"
+  type: talk
+  event: "10th International Conference on Multiscale Materials Modelling"
+  location: "Baltimore, MD"
+  year: 2022
+  date_display: "October 2–7, 2022"
+  invited: false
+
+- title: "Atomistic simulation of plastic deformation in nickel containing helium bubbles"
+  type: talk
+  event: "Mach Conference"
+  location: "Virtual"
+  year: 2022
+  date_display: "April 6–8, 2022"
+  invited: false
+
+- title: "Plastic deformation in nickel bicrystals containing helium bubbles"
+  type: talk
+  event: "The Minerals, Metals & Materials Society (TMS) 2022 Annual Meetings & Exhibition"
+  location: "Anaheim, CA"
+  year: 2022
+  date_display: "February 27–March 3, 2022"
+  invited: false
+
+- title: "Molecular dynamics simulations of the plastic deformation response of Ni single crystals containing He bubbles and radiation-induced self-interstitial atom clusters"
+  type: talk
+  event: "The TMS 2021 Annual Meetings & Exhibition"
+  location: "Virtual"
+  year: 2021
+  date_display: "March 15–18, 2021"
+  invited: false
+
+- title: "Modeling Slip Bands in Nickel Containing Nano-scale Helium Bubbles"
+  type: poster
+  event: "The TMS 2020 Annual Meetings & Exhibition"
+  location: "San Diego, CA"
+  year: 2020
+  date_display: "February 24–28, 2020"
+  invited: false
+
+- title: "Modeling slip-induced crack initiation in nickel containing nano-scale helium bubbles"
+  type: talk
+  event: "Canadian Nuclear Laboratories Workshop"
+  location: "Toronto, Canada"
+  year: 2019
+  date_display: "April 9, 2019"
+  invited: false
